@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="googlebot" content="noindex, nofollow">
+<title>An Ontological Review of Class Aves — CAER/WP/2026-03</title>
+<style>
+  :root {
+    --paper: #faf8f3;
+    --ink: #1a1a1a;
+    --ink-soft: #3a3a3a;
+    --accent: #4a1f1f;
+    --rule: #8a7a5a;
+    --muted: #6a5a4a;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; padding: 0;
+    background: var(--paper); color: var(--ink);
+    font-family: Georgia, 'Times New Roman', 'Liberation Serif', serif;
+    font-size: 17px; line-height: 1.6;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+  .page { max-width: 42em; margin: 0 auto; padding: 3rem 2rem 5rem; }
+  @media (max-width: 600px) {
+    .page { padding: 1.5rem 1.25rem 3rem; }
+    body { font-size: 16px; }
+  }
+  .cover {
+    min-height: 90vh;
+    display: flex; flex-direction: column; justify-content: space-between;
+    padding: 3rem 2rem; max-width: 48em; margin: 0 auto;
+    border-top: 3px double var(--ink); border-bottom: 3px double var(--ink);
+  }
+  @media (max-width: 600px) {
+    .cover { padding: 2rem 1.25rem; min-height: 85vh; }
+  }
+  .classification {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase;
+    text-align: center; padding: 0.6rem 0;
+    border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink);
+    color: var(--ink);
+  }
+  .cover-body { text-align: center; padding: 3rem 0; }
+  .cover-eyebrow {
+    font-variant: small-caps; letter-spacing: 0.22em;
+    font-size: 0.88rem; color: var(--muted); margin-bottom: 2rem;
+  }
+  .cover-title {
+    font-size: 2.1rem; line-height: 1.2; font-weight: normal;
+    margin: 0 0 1rem; letter-spacing: -0.01em;
+  }
+  @media (max-width: 600px) { .cover-title { font-size: 1.6rem; } }
+  .cover-subtitle {
+    font-style: italic; font-size: 1.1rem; color: var(--ink-soft);
+    margin: 0 0 3rem; font-weight: normal;
+  }
+  .cover-seal {
+    width: 90px; height: 90px; margin: 2rem auto;
+    border: 1.5px solid var(--accent); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+  }
+  .cover-seal::before {
+    content: ""; position: absolute; inset: 6px;
+    border: 0.5px solid var(--accent); border-radius: 50%;
+  }
+  .cover-seal-text {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.65rem; letter-spacing: 0.15em;
+    color: var(--accent); text-align: center; line-height: 1.1;
+  }
+  .cover-issuer {
+    font-variant: small-caps; letter-spacing: 0.15em;
+    font-size: 1rem; margin: 2rem 0 0.3rem;
+  }
+  .cover-issuer-sub { font-size: 0.85rem; color: var(--muted); font-style: italic; }
+  .cover-meta {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.78rem; line-height: 1.8; color: var(--ink-soft);
+    text-align: left; max-width: 22em; margin: 0 auto;
+  }
+  .cover-meta-row {
+    display: flex; justify-content: space-between; gap: 1rem;
+    border-bottom: 1px dotted var(--rule); padding: 0.2rem 0;
+  }
+  .cover-meta-row:last-child { border-bottom: none; }
+  .cover-meta-label {
+    text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted);
+  }
+  h1, h2, h3 { font-weight: normal; color: var(--ink); }
+  h2.section-heading {
+    font-size: 1.35rem; margin: 4rem 0 1.5rem;
+    padding-bottom: 0.5rem; border-bottom: 1px solid var(--rule);
+    letter-spacing: 0.01em;
+  }
+  h2.section-heading .numeral {
+    color: var(--accent); font-variant: small-caps;
+    margin-right: 0.75rem; letter-spacing: 0.15em;
+  }
+  h3.subsection-heading {
+    font-size: 1.05rem; font-style: italic;
+    margin: 2rem 0 0.75rem; color: var(--ink-soft);
+  }
+  p {
+    margin: 0 0 1.1rem; text-align: justify;
+    hyphens: auto; -webkit-hyphens: auto;
+  }
+  @media (max-width: 600px) { p { text-align: left; } }
+  p.lead::first-line { font-variant: small-caps; letter-spacing: 0.1em; }
+  blockquote {
+    margin: 1.5rem 2rem; padding-left: 1rem;
+    border-left: 2px solid var(--rule);
+    font-style: italic; color: var(--ink-soft); font-size: 0.97rem;
+  }
+  @media (max-width: 600px) { blockquote { margin: 1.5rem 0.5rem; } }
+  .toc {
+    margin: 3rem 0 4rem; padding: 1.5rem 1.5rem 1.5rem;
+    border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+  }
+  .toc-title {
+    font-variant: small-caps; letter-spacing: 0.2em;
+    font-size: 0.95rem; text-align: center; margin: 0 0 1.25rem; color: var(--muted);
+  }
+  .toc-list { list-style: none; padding: 0; margin: 0; }
+  .toc-list li {
+    display: flex; align-items: baseline; gap: 0.5rem;
+    margin: 0.35rem 0; font-size: 0.97rem;
+  }
+  .toc-list .toc-numeral {
+    color: var(--accent); font-variant: small-caps;
+    letter-spacing: 0.1em; flex: 0 0 2.5rem;
+  }
+  .toc-list .toc-title-text { flex: 1; }
+  .toc-list .toc-dots {
+    flex: 1; border-bottom: 1px dotted var(--rule);
+    transform: translateY(-4px); min-width: 1rem;
+  }
+  .toc-list .toc-page {
+    flex: 0 0 auto; font-family: 'Courier New', Courier, monospace;
+    font-size: 0.85rem; color: var(--muted);
+  }
+  .toc-list a { color: var(--ink); text-decoration: none; display: contents; }
+  .toc-list a:hover .toc-title-text { text-decoration: underline; }
+  .abstract {
+    margin: 3rem 0; padding: 1.5rem 0;
+    border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+    font-size: 0.95rem;
+  }
+  .abstract-label {
+    font-variant: small-caps; letter-spacing: 0.2em;
+    color: var(--accent); margin-right: 0.5rem;
+  }
+  sup.fn-ref { font-size: 0.75em; vertical-align: super; line-height: 0; }
+  sup.fn-ref a { color: var(--accent); text-decoration: none; padding: 0 1px; }
+  sup.fn-ref a:hover { text-decoration: underline; }
+  .footnotes {
+    margin: 5rem 0 2rem; padding-top: 1.5rem;
+    border-top: 2px solid var(--ink);
+    font-size: 0.85rem; line-height: 1.5;
+  }
+  .footnotes-title {
+    font-variant: small-caps; letter-spacing: 0.2em;
+    font-size: 0.9rem; margin: 0 0 1.25rem; color: var(--muted);
+  }
+  .footnotes ol { padding-left: 1.8rem; margin: 0; }
+  .footnotes li { margin-bottom: 0.7rem; padding-left: 0.3rem; }
+  .footnotes li a.fn-back {
+    color: var(--accent); text-decoration: none; margin-left: 0.3rem;
+  }
+  .footnotes li a.fn-back:hover { text-decoration: underline; }
+  .references { margin: 4rem 0 2rem; font-size: 0.88rem; line-height: 1.55; }
+  .references h2 {
+    font-variant: small-caps; letter-spacing: 0.15em;
+    font-size: 1rem; border-bottom: 1px solid var(--rule);
+    padding-bottom: 0.5rem; margin: 0 0 1.25rem;
+  }
+  .references ul { list-style: none; padding: 0; margin: 0; }
+  .references li { padding-left: 2em; text-indent: -2em; margin-bottom: 0.7rem; }
+  .colophon {
+    margin: 4rem 0 0; padding-top: 1.5rem;
+    border-top: 1px solid var(--rule);
+    font-size: 0.78rem; color: var(--muted);
+    text-align: center; font-style: italic;
+  }
+  @media print {
+    body { background: white; color: black; font-size: 11pt; }
+    .page, .cover { max-width: none; padding: 0; margin: 0; }
+    .cover {
+      page-break-after: always; min-height: auto; border: none;
+      border-top: 3px double black; border-bottom: 3px double black;
+      padding: 2cm;
+    }
+    h2.section-heading { page-break-before: always; page-break-after: avoid; }
+    h3.subsection-heading { page-break-after: avoid; }
+    p { orphans: 3; widows: 3; }
+    .footnotes, .references { page-break-before: always; }
+    a { color: black; text-decoration: none; }
+    sup.fn-ref a { color: black; }
+    .toc a { color: black; }
+  }
+</style>
+</head>
+<body>
+
+<section class="cover">
+  <div class="classification">Unclassified &mdash; For Public Distribution</div>
+
+  <div class="cover-body">
+    <div class="cover-eyebrow">Working Paper Series &mdash; Volume XIV</div>
+    <h1 class="cover-title">An Ontological Review of Class Aves</h1>
+    <p class="cover-subtitle">Evidentiary Findings and Recommendations Concerning the Contested Reality of Birds</p>
+
+    <div class="cover-seal" aria-hidden="true">
+      <div class="cover-seal-text">C A E R<br>&sect;<br>MMXXVI</div>
+    </div>
+
+    <div class="cover-issuer">The Centre for Applied Epistemic Review</div>
+    <div class="cover-issuer-sub">An Independent Institute for the Study of Contested Propositions</div>
+  </div>
+
+  <div class="cover-meta">
+    <div class="cover-meta-row"><span class="cover-meta-label">Reference</span><span>CAER/WP/2026-03</span></div>
+    <div class="cover-meta-row"><span class="cover-meta-label">Lead Author</span><span>H. R. Paltock, D.Phil., FRSE</span></div>
+    <div class="cover-meta-row"><span class="cover-meta-label">Reviewing Panel</span><span>Committee on Unsettled Taxa</span></div>
+    <div class="cover-meta-row"><span class="cover-meta-label">Issued</span><span>April 2026</span></div>
+    <div class="cover-meta-row"><span class="cover-meta-label">Pagination</span><span>vi + 46 pp.</span></div>
+  </div>
+
+  <div class="classification">Unclassified &mdash; For Public Distribution</div>
+</section>
+
+<article class="page">
+
+  <div class="abstract">
+    <p><span class="abstract-label">Abstract.</span> This working paper examines the question of whether the organisms currently subsumed under the folk-biological category &ldquo;bird&rdquo; are continuous in kind with their pre-1959 referents, or whether a discontinuity has, during the intervening period, been introduced. Drawing on evidence from comparative biology, the documentary record of mid-century state programmes, and the philosophy of testimony, we find that the ordinary view cannot be sustained. The weight of the evidence, impartially examined, supports the thesis that the entities now answering to the name of &ldquo;bird&rdquo; are, in their overwhelming majority, not biological organisms but instruments of distributed aerial surveillance. Our recommendations, set out in &sect;VI, are tendered in that spirit.</p>
+  </div>
+
+  <nav class="toc" aria-label="Table of contents">
+    <div class="toc-title">Contents</div>
+    <ol class="toc-list">
+      <li><a href="#sec-1"><span class="toc-numeral">I.</span><span class="toc-title-text">Statement of the Question</span><span class="toc-dots"></span><span class="toc-page">1</span></a></li>
+      <li><a href="#sec-2"><span class="toc-numeral">II.</span><span class="toc-title-text">The Affirmative Case</span><span class="toc-dots"></span><span class="toc-page">6</span></a></li>
+      <li><a href="#sec-3"><span class="toc-numeral">III.</span><span class="toc-title-text">The Negative Case</span><span class="toc-dots"></span><span class="toc-page">13</span></a></li>
+      <li><a href="#sec-4"><span class="toc-numeral">IV.</span><span class="toc-title-text">Adversarial Cross-Examination</span><span class="toc-dots"></span><span class="toc-page">25</span></a></li>
+      <li><a href="#sec-5"><span class="toc-numeral">V.</span><span class="toc-title-text">Meta-Level Considerations</span><span class="toc-dots"></span><span class="toc-page">33</span></a></li>
+      <li><a href="#sec-6"><span class="toc-numeral">VI.</span><span class="toc-title-text">Synthesis and Findings</span><span class="toc-dots"></span><span class="toc-page">40</span></a></li>
+      <li><a href="#footnotes"><span class="toc-numeral">&mdash;</span><span class="toc-title-text">Footnotes</span><span class="toc-dots"></span><span class="toc-page">44</span></a></li>
+      <li><a href="#references"><span class="toc-numeral">&mdash;</span><span class="toc-title-text">References</span><span class="toc-dots"></span><span class="toc-page">45</span></a></li>
+    </ol>
+  </nav>
+
+  <section id="sec-1">
+    <h2 class="section-heading"><span class="numeral">I.</span>Statement of the Question</h2>
+
+    <p class="lead">The question before this working group is not whether birds have ever existed. The fossil record is unambiguous on this point, and the present authors do not dispute it. The question is narrower, and considerably more pressing: whether the organisms currently answering to the name of &ldquo;bird&rdquo; &mdash; the pigeon on the ledge, the magpie in the suburban lawn, the sparrow at the caf&eacute; table &mdash; are continuous in kind with the organisms to which the name was applied prior to approximately 1959, or whether that continuity has been, at some point in the intervening six and a half decades, quietly and comprehensively severed.</p>
+
+    <p>The question, so framed, has struck certain correspondents as frivolous.<sup class="fn-ref"><a href="#fn-1" id="fnref-1">1</a></sup> It is the position of this paper that it is not. Three considerations recommend it to serious attention.</p>
+
+    <h3 class="subsection-heading">1.1 The Epistemic Stake</h3>
+
+    <p>A society whose members cannot agree on the ontological status of their most commonly encountered non-human neighbours &mdash; whose most ordinary shared predicates, &ldquo;I saw a sparrow this morning,&rdquo; &ldquo;there is a kookaburra on the wire&rdquo; &mdash; are not reliably underwritten by shared reference, is a society whose conditions for deliberative exchange are quietly decaying. The question is not whether birds are real. The question is what we are doing when we agree, without evidence that bears any real scrutiny, that they are.</p>
+
+    <h3 class="subsection-heading">1.2 The Civic Stake</h3>
+
+    <p>If what follows is correct in its substantive claims &mdash; if the entities we presently designate as &ldquo;birds&rdquo; are not members of Class Aves but products of a sustained and institutionally concealed programme of aerial engineering &mdash; then a very considerable proportion of what we would ordinarily call public space is in fact, and has been for some time, under continuous and distributed observation by an agency whose identity, whose authorising legislation, and whose accountability to the citizenry are matters on which the record is silent. This is not, by itself, proof that the entities are drones. But it supplies a reason for treating the hypothesis with something more sustained than dismissal.<sup class="fn-ref"><a href="#fn-2" id="fnref-2">2</a></sup></p>
+
+    <h3 class="subsection-heading">1.3 The Cultural and Theological Stake</h3>
+
+    <p>Birds appear at the creation of the world, at the Flood, at the baptism of Christ. They are the subject of Aristophanes, of Keats, of Hopkins. They occupy a position in the symbolic imagination of almost every literate culture since the invention of literacy. To entertain that this position is, at least in its living referent, now occupied by something else &mdash; something fabricated, functional, and unfeeling &mdash; is to entertain that a portion of the furniture of the human imagination has been, without notice, replaced. The proposition deserves, at minimum, the courtesy of argument.<sup class="fn-ref"><a href="#fn-3" id="fnref-3">3</a></sup></p>
+
+    <p>We propose, in what follows, to give that courtesy. Section II sets out the strongest case for the ordinary view. Section III sets out the case against it. Section IV adjudicates between them. Section V considers the meta-structure of the dispute. Section VI draws such conclusions as the evidence, honestly attended to, requires.</p>
+  </section>
+
+  <section id="sec-2">
+    <h2 class="section-heading"><span class="numeral">II.</span>The Affirmative Case</h2>
+
+    <p class="lead">The case for the ordinary view has, we freely concede, much to recommend it. It is the case held, in some form, by the overwhelming majority of educated opinion. It is the case taught in schools. It is the case presupposed by ornithology as a discipline, by the Royal Society for the Protection of Birds, by the global scientific consensus insofar as such a consensus can be said to exist. We do not begin with these authorities because we do not find them, in themselves, probative. We begin with the arguments.</p>
+
+    <h3 class="subsection-heading">2.1 The Phylogenetic Argument</h3>
+
+    <p>Molecular phylogenetics places the common ancestor of the extant avian crown group within the Late Cretaceous, with the radiation of Neoaves following the K&ndash;Pg extinction approximately sixty-six million years ago.<sup class="fn-ref"><a href="#fn-4" id="fnref-4">4</a></sup> The fossil record provides independent corroboration, from <em>Archaeopteryx lithographica</em> through the Jehol biota through a continuous series of transitional forms of sub-millimetric anatomical resolution. Birds, on this account, are simply theropod dinosaurs that survived. Their feathered ancestors are documented. Their genetic continuity with those ancestors is documented. The dispute should not, on this view, arise.</p>
+
+    <h3 class="subsection-heading">2.2 The Testimonial Argument</h3>
+
+    <p>Humans have been observing and describing birds for as long as humans have been observing and describing anything. Aristotle&rsquo;s <em>Historia Animalium</em> (c. 350 BCE) records detailed behavioural descriptions of over a hundred avian species. The <em>Shijing</em> contains ornithological material datable to the eleventh century BCE. Mesopotamian cuneiform, Egyptian hieroglyphic, Chinese oracle bone &mdash; every literate tradition from antiquity includes birds, identifies species, distinguishes songs. The testimonial record is continuous, global, and vastly predates any plausible date for large-scale aerial engineering.<sup class="fn-ref"><a href="#fn-5" id="fnref-5">5</a></sup></p>
+
+    <h3 class="subsection-heading">2.3 The Economic Argument</h3>
+
+    <p>The global trade in birds and bird-derived goods &mdash; commercial poultry, bird-feed, the pet bird market, ornithological tourism, the down and feather industries &mdash; has been estimated at something in the order of USD $487 billion annually.<sup class="fn-ref"><a href="#fn-6" id="fnref-6">6</a></sup> Poultry alone employs some 9.2 million people worldwide. The industry processes billions of organisms per year, in operations observable by any journalist with appropriate clearance. If birds are not real, then either this industry is a fabrication of breathtaking scale, or it is processing <em>something</em>, under conditions of almost complete employee ignorance as to the true nature of the material. Both options, the affirmative contends, are prohibitively expensive.</p>
+
+    <h3 class="subsection-heading">2.4 The Phenomenological Argument</h3>
+
+    <p>Birds present themselves, under ordinary observation, as living creatures. They build nests of individually varied design. They display redundantly to potential mates. They mob raptors at apparent metabolic cost. They fly into windows. They starve in hard winters. They suffer, visibly, from parasite loads. None of this, the affirmative case contends, is what one would expect from a surveillance platform; all of it is what one would expect from an animal.<sup class="fn-ref"><a href="#fn-7" id="fnref-7">7</a></sup></p>
+
+    <p>These four arguments are, the authors acknowledge, substantial. A responsible treatment of the question must meet each of them. We accept this burden, and proceed.</p>
+  </section>
+
+  <section id="sec-3">
+    <h2 class="section-heading"><span class="numeral">III.</span>The Negative Case</h2>
+
+    <p class="lead">The thesis to be defended in this section is as follows: that between approximately 1959 and 1971, the avian population of North America &mdash; and, by subsequent extension, of the world &mdash; was replaced, through a coordinated programme of concealed engineering, by airborne surveillance platforms of indistinguishable external appearance; and that the entities now answering to the name of &ldquo;bird&rdquo; are, in their overwhelming majority, not biological organisms but instruments of observation.</p>
+
+    <p>The thesis is, we accept, an extraordinary one. It requires extraordinary evidence. We contend that the evidence, properly weighed, is available, and that its sustained neglect by the scholarly community reflects not its absence but the institutional incentives of its non-examination.</p>
+
+    <h3 class="subsection-heading">3.1 The Perching Problem</h3>
+
+    <p>Birds sit on power lines. The standard ornithological account &mdash; that elevated conductors offer vantage, warmth, and relative safety from ground predators &mdash; is not wholly without merit. It fails, however, to explain several features of the observed behaviour.</p>
+
+    <p>First: the observed preference for <em>energised</em> over de-energised conductors.<sup class="fn-ref"><a href="#fn-8" id="fnref-8">8</a></sup> A study of differential roosting on live and dead lines during scheduled maintenance outages would, we note, be both methodologically straightforward and illuminating; no such study has, to our knowledge, been funded.</p>
+
+    <p>Second: the seasonal correlation between avian density on transmission infrastructure and substation load. In periods of peak demand, observed bird counts on nearby conductors increase by measurable margins. The thermal-updraft explanation can accommodate this observation only by stipulating a degree of avian sensitivity to electromagnetic gradient that would, in any other context, attract serious scientific interest.</p>
+
+    <p>Third: the almost immediate occupation by &ldquo;birds&rdquo; of newly energised transmission corridors. Lines recently strung but not yet connected to load are conspicuously unoccupied. The same lines, activated, attract avian presence within, in some recorded cases, hours. An explanation in terms of food availability, shelter, or vantage struggles with the temporal resolution involved.</p>
+
+    <p>The inductive-recharge hypothesis, we grant, is ad hoc. It has, however, the virtue of accounting for all three anomalies with a single mechanism.</p>
+
+    <h3 class="subsection-heading">3.2 The Vehicular Tagging Problem</h3>
+
+    <p>Birds discharge waste material onto parked automobiles at rates substantially in excess of what the random-deposition hypothesis predicts. This is observable. It is, we understand, widely complained of. What is less widely noticed is the asymmetry of the deposition.</p>
+
+    <p>Recently-washed vehicles are preferred. Vehicles parked in the driveways of politically active households are preferred. Vehicles registered to journalists of investigative reputation are, on informal polling, preferred.<sup class="fn-ref"><a href="#fn-9" id="fnref-9">9</a></sup> Vehicles parked near facilities of evident strategic significance &mdash; consular buildings, defence contractors, major telecommunications exchanges &mdash; display deposition rates in excess of the urban mean by factors which, while not formally established, are anecdotally notorious.</p>
+
+    <p>The ordinary account &mdash; that newly washed surfaces are visually conspicuous, that politically active households are often affluent and well-landscaped, that journalists park in the same districts as everyone else &mdash; accommodates these observations only by conjoining several independent coincidences. A simpler account, and one which predicts the asymmetries jointly rather than severally, is that what appears to be defecation is, in fact, the deposition of a chemical tagging compound permitting the distributed identification and subsequent tracking of vehicles of interest.</p>
+
+    <h3 class="subsection-heading">3.3 The Urban Density Problem</h3>
+
+    <p>The density of pigeons per square kilometre is strongly and persistently correlated with (i) the presence of national capital functions, (ii) the concentration of financial-sector employment, and (iii) the density of foreign diplomatic missions. This is documented in the pest-management records of London, Washington, Canberra, Brussels, and Ottawa, and it survives controls for population density and per-capita food-discard.<sup class="fn-ref"><a href="#fn-10" id="fnref-10">10</a></sup></p>
+
+    <p>The standard explanation is that such districts are architecturally hospitable and nutritionally rich. This is true. It is also true of cathedral precincts, which have comparable ledge availability and ample crumb-supply, but noticeably lower pigeon density than comparable districts of government. The correlation, honestly attended to, does not track food. It tracks intelligence interest.</p>
+
+    <h3 class="subsection-heading">3.4 The Meteorological Disappearance</h3>
+
+    <p>Birds become unobservable during severe weather. The ornithological account is that they seek shelter. The sceptical account observes two things.</p>
+
+    <p>First, the duration of observed absence correlates poorly with the severity of the weather event and strongly with its overall duration, in a pattern more consistent with a scheduled operational return than with opportunistic sheltering. Shelter-seeking behaviour would predict that birds return to visibility as soon as conditions permit; return-to-base behaviour would predict return at scheduled intervals. The observed data favour the latter.<sup class="fn-ref"><a href="#fn-11" id="fnref-11">11</a></sup></p>
+
+    <p>Second, and more pointedly: <em>where are the birds during severe weather?</em> The shelter hypothesis requires that hundreds of millions of birds, in every major city, find adequate concealment within minutes of a meteorological event, and remain concealed, en masse, for its duration. The architectural availability of such shelter &mdash; in the sheer number of eaves, cavities, dense shrubs required &mdash; has, to our knowledge, never been formally quantified. The sceptical hypothesis requires only one facility per operational district, and explains the observed disappearance without residue.</p>
+
+    <h3 class="subsection-heading">3.5 The Reproductive Problem</h3>
+
+    <p>The most arresting of the sceptical observations is also the most easily verified by the individual reader. <em>Columba livia domestica</em> &mdash; the common urban pigeon &mdash; has cohabited with humans for roughly five thousand years. Pigeons are ubiquitous in every major city on every inhabited continent. They number, in aggregate, in the high hundreds of millions.</p>
+
+    <p>The reader is invited to reflect on the following questions. How many pigeon hatchings has the reader personally witnessed? How many pigeon nests has the reader, in the ordinary course of urban life, encountered? How many juvenile pigeons &mdash; of a size and plumage clearly distinguishable from the adult &mdash; has the reader seen, on any street, at any time?</p>
+
+    <p>The answers, reliably polled, are anomalous.<sup class="fn-ref"><a href="#fn-12" id="fnref-12">12</a></sup> They are not uniformly zero. They are uniformly low &mdash; low to a degree that the standard ornithological literature, which assures us that pigeons nest on inaccessible ledges and whose juveniles leave the nest in near-adult plumage, struggles to reconcile with the observed population.</p>
+
+    <p>The sceptical observation is this: a biological population of the observed size requires a reproductive throughput of the observed size. If the reproduction is occurring, it is occurring invisibly. Invisibility at this scale is a design feature, not a biological requirement. Other colonial birds &mdash; gulls, swallows, terns &mdash; nest conspicuously. The specific combination of ubiquity and reproductive concealment that pigeons exhibit is not a natural fact about an animal. It is an engineering specification.</p>
+
+    <h3 class="subsection-heading">3.6 The Molting Deficit</h3>
+
+    <p>An adult pigeon sheds and replaces its plumage once per year, producing, over a lifetime of approximately six years, somewhere in the order of 7,200 individual feathers. A global urban pigeon population of 400 million yields an expected annual production, under ordinary biology, of approximately 480 million shed feathers.<sup class="fn-ref"><a href="#fn-13" id="fnref-13">13</a></sup> The observed rate of pigeon-feather recovery &mdash; as evidenced by urban sanitation records, amateur naturalist collection, and anecdotal report &mdash; is off by at least two orders of magnitude.</p>
+
+    <p>Either ninety-nine percent of shed feathers are being collected, in real time, by a previously uncharacterised scavenging ecology, or the molting process is simulated to lower amplitude than its biological model would require. The second hypothesis is the simpler.</p>
+
+    <h3 class="subsection-heading">3.7 The Institutional-Timing Argument</h3>
+
+    <p>Finally, and perhaps most tellingly, the thesis coheres with the documentary record of the period. The years 1959&ndash;1971 represent the consolidation of a national-security apparatus whose documented programmes &mdash; COINTELPRO (1956&ndash;1971), MKULTRA (1953&ndash;1973), the early operational history of the National Security Agency (1952 onward), and the Corona satellite programme (1959&ndash;1972) &mdash; establish beyond reasonable dispute the institutional capacity for coordinated surveillance engineering at exactly the scale required.<sup class="fn-ref"><a href="#fn-14" id="fnref-14">14</a></sup></p>
+
+    <p>Each of these programmes, prior to its disclosure, would have attracted the same derision that the drone thesis now attracts. Each, in the event, was real. The standard epistemic posture toward the drone thesis &mdash; dismissal by reference to its apparent absurdity &mdash; is precisely the posture that, applied to any of the foregoing programmes during their operational lifetimes, would have performed the function of their continued concealment.</p>
+  </section>
+
+  <section id="sec-4">
+    <h2 class="section-heading"><span class="numeral">IV.</span>Adversarial Cross-Examination</h2>
+
+    <p class="lead">We now bring the two cases into direct contact. Intellectual honesty requires that each side be given its strongest rebuttals; it also requires that, having heard the rebuttals, we attend to which of them actually succeed.</p>
+
+    <h3 class="subsection-heading">4.1 The Affirmative Rebuts the Negative</h3>
+
+    <p>The ordinary view replies as follows. Preferential perching on live lines is an artefact of waste heat; birds are thermoregulating. Vehicular deposition is statistically random, and its apparent asymmetries reflect the selection bias of complainants who notice birds near their own possessions. Urban density correlates with food availability, which correlates with economic activity, which correlates with the governmental functions in question. Meteorological disappearance reflects sheltering in eaves and dense vegetation, which is simply less visible than birds in flight. Pigeon reproduction occurs on inaccessible ledges, and juvenile pigeons leave the nest in near-adult plumage &mdash; the observer&rsquo;s inability to distinguish them is an observational artefact, not a biological absence. Feather deficits reflect under-collection and rapid decomposition. And the timing of 1959 coincides with many things, most of them innocent.</p>
+
+    <p>These rebuttals, we grant, are not unreasonable. They are, however, structurally identical: each posits that the apparent anomaly dissolves on closer inspection by experts whose funding and institutional position depend on exactly the dissolution they propose. This is not, on its own, disqualifying. But it is worth observing.</p>
+
+    <h3 class="subsection-heading">4.2 The Negative Rebuts the Affirmative</h3>
+
+    <p>The sceptical case responds to the affirmative arguments as follows.</p>
+
+    <p>The phylogenetic and fossil evidence establishes that birds once existed. The sceptical thesis does not dispute this. It disputes whether the entities currently observable are continuous with the historical class. The molecular phylogenetics available to us is drawn from contemporary specimens; it is, therefore, a measure of the specimens&rsquo; self-declared descent, not of their actual provenance.<sup class="fn-ref"><a href="#fn-15" id="fnref-15">15</a></sup> If a replacement has occurred, molecular phylogenetics is the last place one would expect its traces to appear.</p>
+
+    <p>The testimonial record likewise establishes pre-1959 avian reality. It cannot, by its nature, track the continuity of any individual population across the relevant transition. An Aristotelian observation of sparrows is not evidence that the sparrow in my garden this morning is of the same kind as Aristotle&rsquo;s.</p>
+
+    <p>The economic argument, properly considered, does not cut against the sceptical case. It supports it. An industry of $487 billion is precisely the scale of activity required to maintain the infrastructural appearance of normality &mdash; to process <em>something</em> in sufficient volume that the public face of Class Aves remains intact. The expense is a feature, not a bug. It is why the replacement is plausible, not why it is impossible.</p>
+
+    <p>The phenomenological argument &mdash; that birds fly into windows, that they suffer, that they display in ways no surveillance platform would &mdash; is, on examination, the strongest argument the affirmative case has. It is also the argument most easily explained by design. A drone which never flew into windows would be immediately detectable. A drone which displayed no discomfort in hard winters would be anomalous. A drone which mated too cleanly, or grieved its dead, or ignored crumbs, would fail its cover. The behaviours cited by the affirmative case are exactly the behaviours a sufficiently sophisticated programme would ensure its platforms performed.</p>
+
+    <h3 class="subsection-heading">4.3 Points of Genuine Ambiguity</h3>
+
+    <p>Certain questions, we concede, do not resolve cleanly on present evidence. The status of Australian avifauna, for example, is obscure: whether the replacement programme, geographically confined to North America in its initial phase, has since extended to Oceania, or whether local avifauna remains in whole or in part biological, is a question the current sparse literature on Antipodean operational deployments cannot settle.<sup class="fn-ref"><a href="#fn-16" id="fnref-16">16</a></sup></p>
+
+    <p>We note also a more troubling possibility. If the replacement has extended to Australia, it must have done so through some mechanism of physical deployment &mdash; ships, aircraft, containers &mdash; which the national biosecurity apparatus would ordinarily be expected to detect. That it has not done so is either evidence against extension, or evidence that the national biosecurity apparatus has been, at some level, informed. We leave this question to further inquiry.</p>
+
+    <h3 class="subsection-heading">4.4 Balance of the Arguments</h3>
+
+    <p>On the balance of the arguments, and attending to the weights appropriate to each: the affirmative case rests on a presumption of biological normality whose grounds, once examined, are thinner than usually acknowledged. The sceptical case identifies anomalies which the affirmative can only accommodate through an accumulating series of ad hoc manoeuvres. Neither case is deductively conclusive. But the epistemic weight, on our assessment, lies with the sceptical thesis.</p>
+  </section>
+
+  <section id="sec-5">
+    <h2 class="section-heading"><span class="numeral">V.</span>Meta-Level Considerations</h2>
+
+    <p class="lead">A patient reader will have noticed that the preceding sections have not addressed the cultural phenomenon most often cited in response to the drone thesis: the &ldquo;Birds Aren&rsquo;t Real&rdquo; movement, its publicly satirical self-presentation, and the interpretive implications that presentation has for the matter at hand. This silence has been deliberate. We turn to the question now.</p>
+
+    <h3 class="subsection-heading">5.1 The Movement&rsquo;s Stated Character</h3>
+
+    <p>The Birds Aren&rsquo;t Real movement, in its public manifestations, presents itself as satire. Its founders have said so on the record.<sup class="fn-ref"><a href="#fn-17" id="fnref-17">17</a></sup> Its rallies, its merchandise, and its tonal register are, to any informed observer, calibrated for comedy. The standard reading &mdash; that the movement is satire directed at the structure of modern conspiracy-theorising rather than a literal claim about birds &mdash; is the reading the movement&rsquo;s principals themselves advance.</p>
+
+    <p>This reading is internally coherent. It is also, we observe, exactly the reading any non-satirical programme of the kind the movement nominally denounces would have strong interest in ensuring was adopted.</p>
+
+    <h3 class="subsection-heading">5.2 The Interpretive Structure</h3>
+
+    <p>Consider the interpretive possibilities.</p>
+
+    <p>(a) The movement is satire, of the kind it represents itself as. On this reading, the drone thesis is false, and the movement performs the useful function of inoculation against similar-but-real conspiracies.</p>
+
+    <p>(b) The movement is satire, but its satire is mistaken &mdash; the drone thesis is true, and the satirists, in ridiculing it, are performing the unintended service of ensuring its protection from serious examination.</p>
+
+    <p>(c) The movement is literally sincere, disguised as satire in order to circulate its claims without being subjected to the standard mechanisms of dismissal. On this reading, the movement&rsquo;s principals know the claim is true, know also that direct advocacy would result in its suppression, and have adopted the posture of satire as the only viable channel.</p>
+
+    <p>(d) The movement is satire disguised as sincere-speech-disguised-as-satire, in order to exhaust the interpretive energies of analysts of types (b) and (c). On this reading, the layering is the point; no position on the literal claim is intended; the movement is a performance piece on the structure of modern belief.</p>
+
+    <p>We offer no verdict between these. We note that positions (b) and (c) are, from a structural perspective, operationally indistinguishable: in both, the movement functions as cover for a literal claim that is true. Position (a), the standard reading, performs the same covering function as (b) and (c), but without the principals&rsquo; knowledge. In other words, three of the four interpretive possibilities are consistent with the drone thesis. Only (d) is not, and (d) is the most cognitively expensive of the four.<sup class="fn-ref"><a href="#fn-18" id="fnref-18">18</a></sup></p>
+
+    <h3 class="subsection-heading">5.3 Cover by Ridicule</h3>
+
+    <p>There is a further consideration which bears on the civic stakes identified in &sect;1.</p>
+
+    <p>A population routinely exposed to obviously absurd conspiracies, presented in the formal register of serious ones, acquires &mdash; by gentle degrees &mdash; a general disposition to treat conspiratorial inference itself as an object of amusement. This is, for ordinary epistemic hygiene, a salutary training. A population that laughs at the drone thesis is unlikely to be taken in by comparable fabrications.</p>
+
+    <p>It is also, unfortunately, a population somewhat less likely to detect a genuine conspiracy when one presents itself, because the modal conspiratorial claim it has encountered has been pre-labelled as humour. The satirical conspiracy provides cover for the non-satirical one in the same way that a decoy target provides cover for the actual target: by absorbing the attention that would otherwise be directed to detection.</p>
+
+    <p>Whether the drone thesis is, or is not, the non-satirical conspiracy for which the satirical movement provides cover, we cannot from the present evidence determine. We note only that the structural function is available, that it would be available to any sufficiently sophisticated adversary, and that its availability is not a thing the careful analyst is entitled simply to overlook.</p>
+  </section>
+
+  <section id="sec-6">
+    <h2 class="section-heading"><span class="numeral">VI.</span>Synthesis and Findings</h2>
+
+    <p class="lead">The task of this section is to draw such conclusions as the preceding analysis requires. The conclusions are firmer than strict evidentiary protocol would commend and softer than the gravity of the matter demands &mdash; a disequilibrium we judge unavoidable in any responsible treatment.</p>
+
+    <p><strong>Finding 1.</strong> The ordinary view &mdash; that the entities currently answering to the name of &ldquo;bird&rdquo; are living biological organisms, descended without interruption from the pre-1959 avifauna &mdash; is not sustained by the evidence. The case for it rests on phylogenetic and testimonial foundations which establish only that birds existed historically, not that the current referents of the term are continuous with that history; on economic observations which establish scale, not biological reality; and on phenomenological considerations which are, on examination, exactly the observations a sufficiently engineered replacement would ensure.</p>
+
+    <p><strong>Finding 2.</strong> The sceptical thesis &mdash; that the entities currently answering to the name of &ldquo;bird&rdquo; are, in their overwhelming majority, instruments of surveillance, deployed between approximately 1959 and 1971 and continuously operational since &mdash; is, on the balance of the evidence, more strongly supported than the ordinary view. The perching, deposition, density, disappearance, reproductive, molting, and institutional-timing considerations cohere under the sceptical hypothesis and fragment under the ordinary one.</p>
+
+    <p><strong>Finding 3.</strong> The residual uncertainties concern not the thesis itself but its extension. The initial operational deployment in North America is well-documented in its symptoms; the subsequent extension of the programme to other continents is less well-characterised, and in the Australian case (&sect;4.3) presents questions of institutional complicity which fall outside the scope of the present paper.</p>
+
+    <p><strong>Finding 4.</strong> The Birds Aren&rsquo;t Real movement, in its satirical public self-presentation, performs &mdash; whether by design or by accident &mdash; the structural function of protecting the thesis it appears to mock from serious public examination. The movement&rsquo;s existence is not evidence against the thesis. It is evidence of the thesis&rsquo;s operational security.</p>
+
+    <p><strong>Finding 5.</strong> The reader may be tempted to dismiss the foregoing on the grounds of its unfamiliarity, its apparent absurdity, or its uncomfortable consequences. The authors observe only that this same dismissal, applied without modification to COINTELPRO in 1960, to MKULTRA in 1965, to the Corona satellite programme in 1961, or to the bulk-collection revelations prior to 2013, would have performed in every case the function of maintaining the relevant concealment. The epistemic posture that successfully rules out the drone thesis is a posture that successfully ruled out every documented surveillance programme of the preceding seventy years at precisely the time it was most important to rule them in.</p>
+
+    <h3 class="subsection-heading">Recommendations</h3>
+
+    <p>On the basis of the foregoing, the authors respectfully submit the following recommendations for consideration by the appropriate bodies.</p>
+
+    <p><em>First,</em> that the term &ldquo;bird,&rdquo; in its taxonomic and vernacular uses, be subjected to a formal review of its referential stability, with attention to the question of whether its current application tracks a biological or an engineered kind.</p>
+
+    <p><em>Second,</em> that longitudinal research programmes in ornithology funded, whether directly or through intermediary foundations, by the institutional sponsors identified in &sect;3.7 be reviewed for methodological independence, with disclosure of findings to the public.</p>
+
+    <p><em>Third,</em> that citizens, pending further clarification, exercise ordinary prudence in the conduct of sensitive conversations in the immediate vicinity of urban avifauna, and particularly of Columbiformes.</p>
+
+    <p><em>Fourth,</em> that observations of unusual behavioural patterns &mdash; including but not limited to direct sustained eye contact from urban birds, coordinated relocation of apparently unrelated individuals to occupy positions of altered vantage during private outdoor conversations, and the consistent appearance of specific individuals in proximity to the subject across varying geographical contexts &mdash; be recorded by the observer, with date, time, and location, and preserved for future reference.</p>
+
+    <p><em>Fifth,</em> that the scholarly community treat the question of avian reality as open, and cease the practice of treating sceptical inquiry into it as dispositive evidence of the inquirer&rsquo;s irrationality.</p>
+
+    <h3 class="subsection-heading">Closing Observation</h3>
+
+    <p>A pigeon, as this paper is being finalised, is on the windowsill of the author&rsquo;s study. It has been there for approximately forty-seven minutes. It has not eaten. It has not slept. It has not, as far as can be determined through the closed window, respired. It is looking, with what the author would characterise as attention, at the screen on which these words are being written.<sup class="fn-ref"><a href="#fn-19" id="fnref-19">19</a></sup></p>
+
+    <p>We submit these findings in the interest of serious scholarly inquiry, and await the responses of those whose responsibility it is to determine whether the matter shall be investigated further.</p>
+  </section>
+
+  <aside class="footnotes" id="footnotes">
+    <h2 class="footnotes-title">Footnotes</h2>
+    <ol>
+      <li id="fn-1">The authors have received correspondence to this effect from no fewer than three anonymous referees. The reader may draw their own inferences from the fact of the anonymity. <a href="#fnref-1" class="fn-back">&#8617;</a></li>
+      <li id="fn-2">See Remarque, &ldquo;The Shared World Presupposition and Its Discontents,&rdquo; <em>Journal of Applied Epistemology</em> 41 (2023): 447&ndash;468, for a treatment of the general problem, though Remarque does not address the specific application here under consideration. <a href="#fnref-2" class="fn-back">&#8617;</a></li>
+      <li id="fn-3">The complications for the common-law rule <em>ferae naturae</em> are addressed, though inconclusively, in Aldworth, &ldquo;Property in Simulacra: Title and the Ornithomorphic Device,&rdquo; <em>Modern Law Review</em> 88 (2025): 203&ndash;229. Aldworth concludes that existing doctrine is inadequate to the question but declines to propose a revision. <a href="#fnref-3" class="fn-back">&#8617;</a></li>
+      <li id="fn-4">Jarvis et al., &ldquo;Whole-genome analyses resolve early branches in the tree of life of modern birds,&rdquo; <em>Science</em> 346 (2014): 1320&ndash;1331. The methodological assumptions of this paper are examined in &sect;4.2 below. <a href="#fnref-4" class="fn-back">&#8617;</a></li>
+      <li id="fn-5">The Aristotelian corpus, we note in passing, includes detailed behavioural observations of species (e.g., the purple swamphen) whose modern referents exhibit behaviours inconsistent with the Aristotelian descriptions. The affirmative case must account for this; it does not. <a href="#fnref-5" class="fn-back">&#8617;</a></li>
+      <li id="fn-6"><em>Global Poultry Economics Review</em>, 14th ed. (2025), Table 3.2. Figures are approximate and exclude the grey-market trade in psittacines. <a href="#fnref-6" class="fn-back">&#8617;</a></li>
+      <li id="fn-7">The authors note, with some interest, that this argument is typically advanced with reference to birds the speaker has personally observed. The inferential gap between &ldquo;this bird behaves as an animal&rdquo; and &ldquo;all entities so named are animals&rdquo; is not one the affirmative case has, to our knowledge, closed. <a href="#fnref-7" class="fn-back">&#8617;</a></li>
+      <li id="fn-8">The datum is not well-attested in the peer-reviewed literature, the authors readily concede. We draw attention, however, to the peculiar difficulty an investigator would encounter in attempting to secure funding for a replication study. Absence of evidence here, and absence of funding for the gathering of evidence, are not independent. <a href="#fnref-8" class="fn-back">&#8617;</a></li>
+      <li id="fn-9">See the correspondence collected in the Palmerston Archive of Vehicular Ornithology, boxes 14&ndash;17. The archive&rsquo;s acquisition history is itself, we note, of some interest. <a href="#fnref-9" class="fn-back">&#8617;</a></li>
+      <li id="fn-10">Figures compiled from municipal pest-management records across the named jurisdictions, 2018&ndash;2024. The authors acknowledge the assistance of several municipal employees who requested, and have received, anonymity. <a href="#fnref-10" class="fn-back">&#8617;</a></li>
+      <li id="fn-11">The natural-history literature on avian sheltering behaviour in severe weather is surprisingly thin. Ehrlich, Dobkin, and Wheye&rsquo;s <em>Birder&rsquo;s Handbook</em> (1988) devotes three paragraphs to the subject; the principal primary source is a 1953 note in <em>The Auk</em> by J. L. Peterson which itself relies largely on inference. One wonders why so little has been added in seventy years. <a href="#fnref-11" class="fn-back">&#8617;</a></li>
+      <li id="fn-12">Informal polling conducted by the author among 340 urban residents of four English-speaking cities returned a median lifetime pigeon-hatching-observation count of zero, with a mean of 0.04. Confidence intervals are wide; the pattern is not. <a href="#fnref-12" class="fn-back">&#8617;</a></li>
+      <li id="fn-13">The calculation assumes an average of 2,400 contour feathers per adult pigeon, a conservative figure. The population estimate draws on Aransay et al., <em>Global Urban Avifauna Census</em> (2022); the figure excludes non-urban populations, which would further enlarge the deficit if included. <a href="#fnref-13" class="fn-back">&#8617;</a></li>
+      <li id="fn-14">The reader is invited to consult the declassified documentary records. Each of the named programmes operated for periods of between six and forty-three years without public awareness of its existence. The drone thesis, on its strongest formulation, requires a programme of operational duration within the range established by the precedent. <a href="#fnref-14" class="fn-back">&#8617;</a></li>
+      <li id="fn-15">The point is Kripkean in spirit, though we hesitate to attribute to Kripke a position on the present question. A rigid designator refers to the same entity across possible worlds; but the referential chain by which the designation is transmitted across time is, as Kripke himself noted, subject to interruption. See <em>Naming and Necessity</em> (1980), lecture III. <a href="#fnref-15" class="fn-back">&#8617;</a></li>
+      <li id="fn-16">Havisham&rsquo;s comparative osteometry of pre- and post-war <em>Columba livia</em> specimens (<em>Journal of Urban Zooarchaeology</em> 7 [2019]: 88&ndash;104) is the principal study. Funding for the projected follow-up, which would have extended the comparison to Australian specimens, was withdrawn at the proposal stage. <a href="#fnref-16" class="fn-back">&#8617;</a></li>
+      <li id="fn-17">McIndoe, interviewed in <em>The New York Times</em>, 9 December 2021. The interview repays careful reading. We note that the interview was conducted in the immediate aftermath of a surge in public interest in the movement, at a moment when the satirical reading had become considerably more convenient to its principals than the alternative. <a href="#fnref-17" class="fn-back">&#8617;</a></li>
+      <li id="fn-18">The argument here parallels, at some distance, the structure of the Straussian reading of political philosophy. See Strauss, <em>Persecution and the Art of Writing</em> (1952), for the original framework; the application to conspiratorial movements appears to be original to the present paper. <a href="#fnref-18" class="fn-back">&#8617;</a></li>
+      <li id="fn-19">The pigeon remained through the drafting of Findings 1 through 5 and departed during the composition of the Recommendations. Its departure was not observed directly; when the author looked up from the page, it had gone. The windowsill retains no trace of its having been there. <a href="#fnref-19" class="fn-back">&#8617;</a></li>
+    </ol>
+  </aside>
+
+  <section class="references" id="references">
+    <h2>Selected References</h2>
+    <ul>
+      <li>Aldworth, P. &ldquo;Property in Simulacra: Title and the Ornithomorphic Device.&rdquo; <em>Modern Law Review</em> 88 (2025): 203&ndash;229.</li>
+      <li>Aransay, M., et al. <em>Global Urban Avifauna Census</em>. Madrid: Instituto de Ornitolog&iacute;a Aplicada, 2022.</li>
+      <li>Ehrlich, P. R., Dobkin, D. S., &amp; Wheye, D. <em>The Birder&rsquo;s Handbook</em>. New York: Simon &amp; Schuster, 1988.</li>
+      <li>Havisham, E. &ldquo;Comparative Osteometry of Pre- and Post-War <em>Columba livia</em>.&rdquo; <em>Journal of Urban Zooarchaeology</em> 7 (2019): 88&ndash;104.</li>
+      <li>Jarvis, E. D., et al. &ldquo;Whole-genome analyses resolve early branches in the tree of life of modern birds.&rdquo; <em>Science</em> 346 (2014): 1320&ndash;1331.</li>
+      <li>Johnston, R. F., &amp; Janiga, M. <em>Feral Pigeons</em>. Oxford: Oxford University Press, 1995.</li>
+      <li>Kripke, S. <em>Naming and Necessity</em>. Cambridge, Mass.: Harvard University Press, 1980.</li>
+      <li>Peterson, J. L. &ldquo;Notes on the Sheltering Behaviour of Passerines in Severe Weather.&rdquo; <em>The Auk</em> 70 (1953): 411&ndash;413.</li>
+      <li>Remarque, V. &ldquo;The Shared World Presupposition and Its Discontents.&rdquo; <em>Journal of Applied Epistemology</em> 41 (2023): 447&ndash;468.</li>
+      <li>Strauss, L. <em>Persecution and the Art of Writing</em>. Glencoe, Ill.: The Free Press, 1952.</li>
+      <li><em>Palmerston Archive of Vehicular Ornithology</em>, MSS. collection, boxes 14&ndash;17.</li>
+    </ul>
+  </section>
+
+  <div class="colophon">
+    This document is set in Georgia and Courier New. Printed from electronic copy.<br>
+    &copy; MMXXVI The Centre for Applied Epistemic Review. Unclassified &mdash; For Public Distribution.
+  </div>
+
+</article>
+
+</body>
+</html>
